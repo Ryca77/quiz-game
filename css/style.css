@@ -1,8 +1,11 @@
+/*Question Page Style*/
+
 body {
 	background-image: url(../images/crest-watermark.png);
 	background-repeat: no-repeat;
 	background-size: 800px;
 	background-position: center;
+	position: relative;
 	max-width: 800px;
 	height: 100%;
 	width: 100%;
@@ -40,6 +43,18 @@ body {
 	height: 620px;
 	font-family: 'Aldrich', sans-serif;
 	border: 1px solid none;
+}
+
+.question-number, .question {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 15px;
+	border: 1px solid none;
+}
+
+.question {
+	margin-bottom: 20px;
+	font-size: 20px;
 }
 
 .answers-container {
@@ -94,7 +109,7 @@ body {
 	text-align: center;
 	border: none;
 	font-family: 'Aldrich', sans-serif;
-	font-size: 35px;
+	font-size: 30px;
 	background-color: #FFFFFF;
 	border: 2px solid black;
 	border-radius: 5px;
@@ -103,5 +118,51 @@ body {
 .submit:hover {
 	background-color: #DA020E;
 }
+
+/*Hidden Answer Page Style*/
+
+.answer-overlay {
+	width: 85%;
+	height: 100%;
+	top: 150px;
+	padding: 20px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	text-align: justify;
+	background: #FFFFFF;
+	border: 2px solid black;
+	border-radius: 10px;
+	display: none;
+}
+
+.answer {
+	text-align: center;
+	font-family: 'Aldrich', sans-serif;
+	font-size: 25px;
+}
+
+.answer-info, .score {
+	font-family: 'Aldrich', sans-serif;
+	font-size: 20px;
+	line-height: 25px;
+}
+
+.next-question {
+	display: block;
+	margin: 0 auto;
+	padding-top: 10px;
+	text-align: center;
+	border: none;
+	font-family: 'Aldrich', sans-serif;
+	font-size: 30px;
+	background-color: #FFFFFF;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
+.next-question:hover {
+	background-color: #DA020E;
+}
+
 
 
