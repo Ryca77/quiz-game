@@ -1,0 +1,107 @@
+body {
+	background-image: url(../images/crest-watermark.png);
+	background-repeat: no-repeat;
+	background-size: 800px;
+	background-position: center;
+	max-width: 800px;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 10px;
+	border: 2px solid black;
+	border-radius: 10px
+}
+
+.masthead {
+	background-image: url(../images/red-devil.png), 
+		url(../images/red-devil.png);
+	background-size: 85px;
+	background-position: left, right;
+	background-repeat: no-repeat;
+	text-align: center;
+	margin: 10px;
+	height: 120px;
+	display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+	font-family: 'Aldrich', sans-serif;
+	font-size: 20px;
+	border: 1px solid none;
+}
+
+.caveat {
+	font-family: 'Aldrich', sans-serif;
+	font-size: 15px;
+}
+
+.question-container {
+	margin: 10px;
+	height: 620px;
+	font-family: 'Aldrich', sans-serif;
+	border: 1px solid none;
+}
+
+.answers-container {
+	list-style: none;
+	margin: 10px;
+	padding-right: 40px;
+	columns: 2;
+	height: 500px;
+	border: 1px solid none;
+}
+
+.pic1, .pic2, .pic3, .pic4 {
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 45%;
+	padding-top: 10px;
+	padding-left: 10px;
+	font-size: 20px;
+	color: white;
+}
+
+.pic1, .pic2, .pic3, .pic4:hover {
+	cursor: pointer;
+}
+
+.pic2, .pic4 {
+	margin-top: 5px;
+}
+
+.pic1 {
+	background-image: url(../images/matt-busby.jpeg);
+}
+
+.pic2 {
+	background-image: url(../images/louis-van-gaal.jpeg);
+}
+
+.pic3 {
+	background-image: url(../images/ryan-giggs.jpeg);
+}
+
+.pic4 {
+	background-image: url(../images/alex-ferguson.jpeg);
+}
+
+.submit {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	margin-top: -50px;
+	padding-top: 10px;
+	text-align: center;
+	border: none;
+	font-family: 'Aldrich', sans-serif;
+	font-size: 35px;
+	background-color: #FFFFFF;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
+.submit:hover {
+	background-color: #DA020E;
+}
+
+
