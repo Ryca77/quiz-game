@@ -119,6 +119,12 @@ body {
 	background-color: #DA020E;
 }
 
+@media only screen and (max-width: 500px) {
+ 	.pic1, .pic2, .pic3, .pic4 {
+ 		height: 25%;
+ 	}
+}
+
 /*Hidden Answer Page Style*/
 
 .answer-overlay {
