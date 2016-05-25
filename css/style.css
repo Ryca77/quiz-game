@@ -38,6 +38,12 @@ body {
 	font-size: 15px;
 }
 
+.start {
+	font-family: 'Aldrich', sans-serif;
+	font-size: 50px;
+	text-align: center;
+}
+
 .question-container {
 	margin: 10px;
 	height: 620px;
@@ -76,7 +82,7 @@ body {
 	color: white;
 }
 
-.pic1, .pic2, .pic3, .pic4:hover {
+#go, .pic1, .pic2, .pic3, .pic4:hover {
 	cursor: pointer;
 }
 

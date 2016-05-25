@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 //questions & answers array//
 
-var quiz = [ {
+var allQuestions = [ {
 	questionNumber: 1,
 	question: 'Who is the most successful manager of Manchester United?',
 	options: ['Sir Matt Busby', 'Louis Van Gaal', 'Ryan Giggs', 'Sir Alex Ferguson'],
@@ -39,8 +39,81 @@ var quiz = [ {
 	},
 ];
 
+//image variables//
+var img = new Image();
+img.url = '../images/matt-busby.jpeg';
+var img = new Image();
+img.url = '../images/louis-van-gaal.jpeg';
+var img = new Image();
+img.url = '../images/ryan-giggs1.jpeg';
+var img = new Image();
+img.url = '../images/alex-ferguson.jpeg';
+var img = new Image();
+img.url = '../images/old-trafford.jpeg';
+var img = new Image();
+img.url = '../images/emirates.jpeg';
+var img = new Image();
+img.url = '../images/stamford-bridge.jpeg';
+var img = new Image();
+img.url = '../images/anfield.jpeg';
+var img = new Image();
+img.url = '../images/cristiano-ronaldo.jpeg';
+var img = new Image();
+img.url = '../images/bobby-charlton.jpeg';
+var img = new Image();
+img.url = '../images/wayne-rooney.jpeg';
+var img = new Image();
+img.url = '../images/george-best.jpeg';
+var img = new Image();
+img.url = '../images/newton-heath.jpeg';
+var img = new Image();
+img.url = '../images/salford-city.jpeg';
+var img = new Image();
+img.url = '../images/fcunited.jpeg';
+var img = new Image();
+img.url = '../images/irlam.jpeg';
+var img = new Image();
+img.url = '../images/paul-scholes.jpeg';
+var img = new Image();
+img.url = '../images/mark-hughes.jpeg';
+var img = new Image();
+img.url = '../images/ryan-giggs2.jpeg';
+var img = new Image();
+img.url = '../images/david-beckham.jpeg';
+
+
+//references to classes//
+var questionTitle = document.getElementByClassName('question');
+var optionsList = document.getElementByClassName('answers-container');
+
+//start//
+var i = 0;
+var length1 = allQuestions.length;
+
+go.onclick = function() {
+	if(i>allQuestions.length -1) {
+		i=0;
+	}
+	currentQuestion(i);
+	i++;
+};
+
 //show question//
-function currentQuestion() {
+function currentQuestion(qnumber) {
+	var nextQuestion = allQuestions[i];
+	questionTitle.innerText = nextQuestion.question;
+	optionsList.innerText = "";
+	for(key in nextQuestion.options) {
+		var optionText = nextQuestion.options[key];
+		optionsList.appendChild(createList(optionText));
+	}
+}
+
+function createList(name,optionText) {
+
+}
+
+
 	$('.question-number').html([questionNumber]);
 		var result = "Question" + " " + questionNumber;
 	$('.question').html("question");
@@ -51,6 +124,7 @@ function currentQuestion() {
 function selectAnswer() {
 	var userChoice = ('.answers-container').click(function() {
 	
+	//each question has 4 pics to choose from - the following will eventually fade out the ones which aren't selected by the user//
 	$('.pic1').click(function() {
 		$('.pic2, .pic3, .pic4').css({"webkit-filter" : "opacity(0.5)"})
 	});
@@ -84,15 +158,16 @@ function checkAnswer(choice,answer) {
 
 };
 
-var currentQuestion = quiz[currentQuestion];
+//these are the beginnings of the triggers that show answer and next question//
+var currentQuestion = allQuestions[currentQuestion];
 $('.question-container').on('click', '.submit', function () {
 	$('.answer-overlay').fadeIn(1000);
 	result;
+	info;
 	updateScore();
-	info++;
 });
 
-var currentGame = quiz[currentQuestion];
+var currentGame = allQuestions[currentQuestion];
 $('.answer-overlay').on('click', '.next-question', function() {
 	$('.answer-overlay').fadeOut(1000);
 	currentQuestion++;
