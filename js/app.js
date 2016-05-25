@@ -83,26 +83,27 @@ img.url = '../images/david-beckham.jpeg';
 
 
 //references to classes//
-var questionTitle = document.getElementByClassName('question');
-var optionsList = document.getElementByClassName('answers-container');
+var questionTitle = document.getElementById('question');
+var optionsList = document.getElementById('answers-container');
 
 //start//
 var i = 0;
 var length1 = allQuestions.length;
 
 go.onclick = function() {
-	if(i>allQuestions.length -1) {
-		i=0;
+	if(i > allQuestions.length -1) {
+		i = 0;
 	}
-	currentQuestion(i);
-	i++;
+	generateQuestions(i);
+	i ++;
 };
 
 //show question//
-function currentQuestion(qnumber) {
+function generateQuestions() {
+	console.log(allQuestions[i].choices);
 	var nextQuestion = allQuestions[i];
 	questionTitle.innerText = nextQuestion.question;
-	optionsList.innerText = "";
+	optionsList.innerHTML = "";
 	for(key in nextQuestion.options) {
 		var optionText = nextQuestion.options[key];
 		optionsList.appendChild(createList(optionText));
@@ -110,15 +111,9 @@ function currentQuestion(qnumber) {
 }
 
 function createList(name,optionText) {
-
+	var listItem = document('.li');
+	return listItem;
 }
-
-
-	$('.question-number').html([questionNumber]);
-		var result = "Question" + " " + questionNumber;
-	$('.question').html("question");
-	$('.answers-container').html("options");
-};
 
 //user selects answer//
 function selectAnswer() {
@@ -182,6 +177,11 @@ var question
 var options
 var answer
 var score
+
+/*$('.question-number').html([questionNumber]);
+		var result = "Question" + " " + questionNumber;
+	$('.question').html("question");
+	$('.answers-container').html("options");
 
 //Display Answer Modal//
 /*$('.submit').click(function() {
