@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 //questions & answers array//
-
+var i = 0;
 var allQuestions = [ {
 	questionNumber: 1,
 	question: 'Who is the most successful manager of Manchester United?',
@@ -83,11 +83,55 @@ img.url = '../images/david-beckham.jpeg';
 
 
 //references to classes//
-var questionTitle = document.getElementById('question');
-var optionsList = document.getElementById('answers-container');
+/*var questionTitle = document.getElementById('question');
+var optionsList = document.getElementById('answers-container');*/
+
+var answerSection = "";
+$('.question-container').hide();
+$('.submit').hide(); 
+
+//start quiz and generate first question//
+$('.start').on('click', function() {
+	$(this).hide();
+	generateQuestions();
+
+});
+
+function generateQuestions() {
+	$('.question-container').fadeIn(1000);
+	$('.submit').fadeIn(1000);
+	var currentQuestion = allQuestions[i].question;
+	$(allQuestions[i].options).each(function(idx,valuE) {
+		console.log(currentQuestion);
+		currentQuestion++;
+	});
+};
+
+//submit answer and show answer modal//
+$('.submit').on('click', function() {
+	$('.answer-overlay').show();
+});
+
+function submitAnswer() {
+	$('.answer-overlay').show();
+	var currentAnswer = allQuestions[i].answer;
+		currentQuestion++;
+};
+
+//hide answer modal and show next question//
+$('.next-question').on('click', function() {
+	nextQuestion();
+});
+
+function nextQuestion() {
+	$('.answer-overlay').fadeOut(1000);
+	var currentQuestion = allQuestions[i].question;
+		currentQuestion++;
+};
+
 
 //start//
-var i = 0;
+/*var i = 0;
 var length1 = allQuestions.length;
 
 go.onclick = function() {
@@ -96,10 +140,10 @@ go.onclick = function() {
 	}
 	generateQuestions(i);
 	i ++;
-};
+};*/
 
 //show question//
-function generateQuestions() {
+/*function generateQuestions() {
 	console.log(allQuestions[i].choices);
 	var nextQuestion = allQuestions[i];
 	questionTitle.innerText = nextQuestion.question;
@@ -108,37 +152,41 @@ function generateQuestions() {
 		var optionText = nextQuestion.options[key];
 		optionsList.appendChild(createList(optionText));
 	}
-}
+}*/
 
-function createList(name,optionText) {
+/*function createList(name,optionText) {
 	var listItem = document('.li');
 	return listItem;
-}
+}*/
 
 //user selects answer//
-function selectAnswer() {
-	var userChoice = ('.answers-container').click(function() {
+/*function selectAnswer() {
+	var userChoice = ('.answers-container').click(function() {*/
 	
 	//each question has 4 pics to choose from - the following will eventually fade out the ones which aren't selected by the user//
 	$('.pic1').click(function() {
+		$('.pic1').css({"webkit-filter" : "opacity(1)"})
 		$('.pic2, .pic3, .pic4').css({"webkit-filter" : "opacity(0.5)"})
 	});
 
 	$('.pic2').click(function() {
+		$('.pic2').css({"webkit-filter" : "opacity(1)"})
 		$('.pic1, .pic3, .pic4').css({"webkit-filter" : "opacity(0.5)"})
 	});
 
 	$('.pic3').click(function() {
+		$('.pic3').css({"webkit-filter" : "opacity(1)"})
 		$('.pic1, .pic2, .pic4').css({"webkit-filter" : "opacity(0.5)"})
 	});
 
 	$('.pic4').click(function() {
+		$('.pic4').css({"webkit-filter" : "opacity(1)"})
 		$('.pic1, .pic2, .pic3').css({"webkit-filter" : "opacity(0.5)"})
 	});
-});
+
 
 //return result to the user//
-$('.answer').html(checkAnswer(userChoice,answer));
+/*$('.answer').html(checkAnswer(userChoice,answer));
 	var result = checkAnswer + " " + "The answer is" + " " + answer;
 
 //check answer//
@@ -151,10 +199,10 @@ function checkAnswer(choice,answer) {
 	}
 }
 
-};
+};*/
 
 //these are the beginnings of the triggers that show answer and next question//
-var currentQuestion = allQuestions[currentQuestion];
+/*var currentQuestion = allQuestions[currentQuestion];
 $('.question-container').on('click', '.submit', function () {
 	$('.answer-overlay').fadeIn(1000);
 	result;
@@ -167,28 +215,27 @@ $('.answer-overlay').on('click', '.next-question', function() {
 	$('.answer-overlay').fadeOut(1000);
 	currentQuestion++;
 	nextQuestion();
-});
-
-});
-
+});*/
 
 /*var questionNumber
 var question
 var options
 var answer
-var score
+var score*/
 
 /*$('.question-number').html([questionNumber]);
 		var result = "Question" + " " + questionNumber;
 	$('.question').html("question");
-	$('.answers-container').html("options");
+	$('.answers-container').html("options");*/
 
 //Display Answer Modal//
 /*$('.submit').click(function() {
-	$('.answer-overlay').fadeIn(1000);
-});
+	$('.answer-overlay').show();
+});*/
 
 //Hide Answer Model & Launch Next Question//
-$('.next-question').click(function() {
+/*$('.next-question').click(function() {
 	$('.answer-overlay').fadeOut(1000);
 });*/
+
+});
