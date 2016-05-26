@@ -82,10 +82,6 @@ var img = new Image();
 img.url = '../images/david-beckham.jpeg';
 
 
-//references to classes//
-/*var questionTitle = document.getElementById('question');
-var optionsList = document.getElementById('answers-container');*/
-
 var answerSection = "";
 $('.question-container').hide();
 $('.submit').hide(); 
@@ -101,21 +97,23 @@ function generateQuestions() {
 	$('.question-container').fadeIn(1000);
 	$('.submit').fadeIn(1000);
 	var currentQuestion = allQuestions[i].question;
-	$(allQuestions[i].options).each(function(idx,valuE) {
 		console.log(currentQuestion);
-		currentQuestion++;
-	});
+	var currentOptions = allQuestions[i].options;
+		console.log(currentOptions);
 };
 
 //submit answer and show answer modal//
 $('.submit').on('click', function() {
 	$('.answer-overlay').show();
+	submitAnswer();
 });
 
 function submitAnswer() {
 	$('.answer-overlay').show();
 	var currentAnswer = allQuestions[i].answer;
-		currentQuestion++;
+		console.log(currentAnswer);
+	var currentInfo = allQuestions[i].info;
+		console.log(currentInfo);
 };
 
 //hide answer modal and show next question//
@@ -125,8 +123,10 @@ $('.next-question').on('click', function() {
 
 function nextQuestion() {
 	$('.answer-overlay').fadeOut(1000);
-	var currentQuestion = allQuestions[i].question;
-		currentQuestion++;
+	var nextQuestion = allQuestions[i].question;
+		console.log(nextQuestion);
+	var nextNumber = allQuestions[i].questionNumber++;
+		console.log(nextNumber);
 };
 
 
@@ -217,11 +217,6 @@ $('.answer-overlay').on('click', '.next-question', function() {
 	nextQuestion();
 });*/
 
-/*var questionNumber
-var question
-var options
-var answer
-var score*/
 
 /*$('.question-number').html([questionNumber]);
 		var result = "Question" + " " + questionNumber;
