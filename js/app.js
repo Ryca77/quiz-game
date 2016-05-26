@@ -21,7 +21,7 @@ var allQuestions = [ {
 	question: 'Who is the all time top goal scorer at Machester United?',
 	options: ['Cristiano Ronaldo', 'Sir Bobby Charlton', 'Wayne Rooney', 'George Best'],
 	answer: 1,
-	info: 'Sir Bobby Charlton has held the top goalscorer record since 1973. He scored a total of 249 goals over a 17 year period. Wayne Rooney is currently on 245 goals and is likely to surpass Sir Bobby during the 2016/17 season'
+	info: 'Sir Bobby Charlton has held the top goalscorer record since 1973. He scored a total of 249 goals over a 17 year period. Wayne Rooney is currently on 245 goals and is likely to surpass Sir Bobby during the 2016/17 season.'
 	},
 			 {
 	questionNumber: 4,
@@ -35,7 +35,7 @@ var allQuestions = [ {
 	question: 'Who has made the most appearances for Manchester United?',
 	options: ['Paul Scholes', 'Mark Hughes', 'Ryan Giggs', 'David Beckham'],
 	answer: 2,
-	info: 'Ryan Giggs made 963 appearances for Manchester United over a 23 year career at the club. This is over 200 more than any other player and it is thought that this record will never be beaten'
+	info: 'Ryan Giggs made 963 appearances for Manchester United over a 23 year career at the club. This is over 200 more than any other player and it is thought that this record will never be beaten.'
 	},
 ];
 
@@ -111,6 +111,21 @@ function generateQuestions() {
     console.log(firstOptions);
 };
 
+//select and check answer//
+function checkAnswer(user, answer) {
+	var userChoice = $('li').on('click', function() {
+		console.log(userChoice);
+	if (userChoice === currentAnswer) {
+		return "Correct!"
+	}
+	else if (userChoice !== currentAnswer) {
+		return "Incorrect!"
+	}
+	$('.answer').html(checkAnswer(userChoice, currentAnswer));
+	console.log(checkAnswer);
+});
+};
+
 //submit answer and show answer modal//
 $('.submit').on('click', function() {
 	$('.answer-overlay').show();
@@ -155,10 +170,7 @@ function nextQuestion() {
   	console.log(nextOptions);
 };
 
-//user selects answer//
-/*function selectAnswer() {
-	var userChoice = ('.answers-container').click(function() {*/
-	
+
 	//each question has 4 pics to choose from - the following will eventually fade out the ones which aren't selected by the user//
 	$('#pic1').click(function() {
 		$('#pic1').css({"webkit-filter" : "opacity(1)"})
@@ -184,16 +196,6 @@ function nextQuestion() {
 //return result to the user//
 /*$('.answer').html(checkAnswer(userChoice,answer));
 	var result = checkAnswer + " " + "The answer is" + " " + answer;
-
-//check answer//
-function checkAnswer(choice,answer) {
-	if (userChoice === answer) {
-		return "Correct!"
-	}
-	else if (userChoice !== answer) {
-		return "Incorrect!"
-	}
-}
 
 };*/
 
@@ -224,7 +226,7 @@ $('.answer-overlay').on('click', '.next-question', function() {
 	$('.answer-overlay').show();
 });*/
 
-//Hide Answer Model & Launch Next Question//
+//Hide Answer Model//
 /*$('.next-question').click(function() {
 	$('.answer-overlay').fadeOut(1000);
 });*/
