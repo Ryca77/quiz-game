@@ -96,10 +96,14 @@ $('.start').on('click', function() {
 function generateQuestions() {
 	$('.question-container').fadeIn(1000);
 	$('.submit').fadeIn(1000);
-	var currentQuestion = allQuestions[i].question;
-		console.log(currentQuestion);
-	var currentOptions = allQuestions[i].options;
-		console.log(currentOptions);
+	var firstQuestion = allQuestions[i].question;
+		$('.question').html(firstQuestion);
+		console.log(firstQuestion);
+	var firstNumber = allQuestions[i].questionNumber;
+		$('.question-number').html("Question" + " " + firstNumber);
+		console.log(firstNumber);
+	var firstOptions = allQuestions[i].options;
+		console.log(firstOptions);
 };
 
 //submit answer and show answer modal//
@@ -111,8 +115,10 @@ $('.submit').on('click', function() {
 function submitAnswer() {
 	$('.answer-overlay').show();
 	var currentAnswer = allQuestions[i].answer;
+		$('.answer').html(currentAnswer);
 		console.log(currentAnswer);
 	var currentInfo = allQuestions[i].info;
+		$('.answer-info').html(currentInfo);
 		console.log(currentInfo);
 };
 
@@ -123,10 +129,21 @@ $('.next-question').on('click', function() {
 
 function nextQuestion() {
 	$('.answer-overlay').fadeOut(1000);
+	if(i>allQuestions.length -1) {
+		i=0
+	}
+	generateQuestions(i);
+	i++
+
 	var nextQuestion = allQuestions[i].question;
+		$('.question').html(nextQuestion);
 		console.log(nextQuestion);
 	var nextNumber = allQuestions[i].questionNumber++;
+		$('.question-number').html("Question" + " " + nextNumber);
 		console.log(nextNumber);
+	var nextOptions = allQuestions[i].options;
+		$('.options').html(nextOptions);
+		console.log(nextOptions);
 };
 
 
