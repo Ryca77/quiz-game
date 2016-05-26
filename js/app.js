@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 //questions & answers array//
 var i = 0;
+var j =0;
 var allQuestions = [ {
 	questionNumber: 1,
 	question: 'Who is the most successful manager of Manchester United?',
@@ -87,8 +88,8 @@ $('.question-container').hide();
 $('.submit').hide(); 
 
 //start quiz and generate first question//
-$('.start').on('click', function() {
-	$(this).hide();
+$('#go').on('click', function() {
+	$('.start').hide();
 	generateQuestions();
 
 });
@@ -102,8 +103,10 @@ function generateQuestions() {
 	var firstNumber = allQuestions[i].questionNumber;
 		$('.question-number').html("Question" + " " + firstNumber);
 		console.log(firstNumber);
-	var firstOptions = allQuestions[i].options;
-		console.log(firstOptions);
+	/*var firstOptions = allQuestions[i].options;
+		$('.options').html(firstOptions);
+		console.log(firstOptions);*/
+
 };
 
 //submit answer and show answer modal//
@@ -138,67 +141,42 @@ function nextQuestion() {
 	var nextQuestion = allQuestions[i].question;
 		$('.question').html(nextQuestion);
 		console.log(nextQuestion);
-	var nextNumber = allQuestions[i].questionNumber++;
+	var nextNumber = allQuestions[i].questionNumber;
 		$('.question-number').html("Question" + " " + nextNumber);
 		console.log(nextNumber);
-	var nextOptions = allQuestions[i].options;
-		$('.options').html(nextOptions);
-		console.log(nextOptions);
+	/*var nextOptions = allQuestions[i].options;
+		$('.option1').html(nextOptions);
+		console.log(nextOptions);*/
+	
+	var nextOptionsList = allQuestions[i].options;
+		$('li').html(nextOptionsList);
+		console.log(nextOptionsList);
+	
 };
-
-
-//start//
-/*var i = 0;
-var length1 = allQuestions.length;
-
-go.onclick = function() {
-	if(i > allQuestions.length -1) {
-		i = 0;
-	}
-	generateQuestions(i);
-	i ++;
-};*/
-
-//show question//
-/*function generateQuestions() {
-	console.log(allQuestions[i].choices);
-	var nextQuestion = allQuestions[i];
-	questionTitle.innerText = nextQuestion.question;
-	optionsList.innerHTML = "";
-	for(key in nextQuestion.options) {
-		var optionText = nextQuestion.options[key];
-		optionsList.appendChild(createList(optionText));
-	}
-}*/
-
-/*function createList(name,optionText) {
-	var listItem = document('.li');
-	return listItem;
-}*/
 
 //user selects answer//
 /*function selectAnswer() {
 	var userChoice = ('.answers-container').click(function() {*/
 	
 	//each question has 4 pics to choose from - the following will eventually fade out the ones which aren't selected by the user//
-	$('.pic1').click(function() {
-		$('.pic1').css({"webkit-filter" : "opacity(1)"})
-		$('.pic2, .pic3, .pic4').css({"webkit-filter" : "opacity(0.5)"})
+	$('#pic1').click(function() {
+		$('#pic1').css({"webkit-filter" : "opacity(1)"})
+		$('#pic2, #pic3, #pic4').css({"webkit-filter" : "opacity(0.5)"})
 	});
 
-	$('.pic2').click(function() {
-		$('.pic2').css({"webkit-filter" : "opacity(1)"})
-		$('.pic1, .pic3, .pic4').css({"webkit-filter" : "opacity(0.5)"})
+	$('#pic2').click(function() {
+		$('#pic2').css({"webkit-filter" : "opacity(1)"})
+		$('#pic1, #pic3, #pic4').css({"webkit-filter" : "opacity(0.5)"})
 	});
 
-	$('.pic3').click(function() {
-		$('.pic3').css({"webkit-filter" : "opacity(1)"})
-		$('.pic1, .pic2, .pic4').css({"webkit-filter" : "opacity(0.5)"})
+	$('#pic3').click(function() {
+		$('#pic3').css({"webkit-filter" : "opacity(1)"})
+		$('#pic1, #pic2, #pic4').css({"webkit-filter" : "opacity(0.5)"})
 	});
 
-	$('.pic4').click(function() {
-		$('.pic4').css({"webkit-filter" : "opacity(1)"})
-		$('.pic1, .pic2, .pic3').css({"webkit-filter" : "opacity(0.5)"})
+	$('#pic4').click(function() {
+		$('#pic4').css({"webkit-filter" : "opacity(1)"})
+		$('#pic1, #pic2, #pic3').css({"webkit-filter" : "opacity(0.5)"})
 	});
 
 
