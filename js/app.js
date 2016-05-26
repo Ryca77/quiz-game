@@ -2,13 +2,12 @@ $(document).ready(function(){
 
 //questions & answers array//
 var i = 0;
-var j =0;
 var allQuestions = [ {
 	questionNumber: 1,
 	question: 'Who is the most successful manager of Manchester United?',
 	options: ['Sir Matt Busby', 'Louis Van Gaal', 'Ryan Giggs', 'Sir Alex Ferguson'],
 	answer: 3,
-	info: 'Sir Alex Ferguson was the manager of Manchester United for 26 years between 1986 and 2013. During that time he amassed 38 trophies including 13 Premier League titles, five FA Cups and two UEFA Champions League titles. His win rate was nearly 60 per cent, the higest of any manager in the history of the club.'
+	info: 'Sir Alex Ferguson was the manager of Manchester United for 26 years between 1986 and 2013. During that time he amassed 38 trophies including 13 Premier League titles, five FA Cups and two UEFA Champions League titles. His win rate was nearly 60 per cent, the highest of any manager in the history of the club.'
 	},
 			 {
 	questionNumber: 2,
@@ -41,46 +40,46 @@ var allQuestions = [ {
 ];
 
 //image variables//
-var img = new Image();
+/*var img = Image();
 img.url = '../images/matt-busby.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/louis-van-gaal.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/ryan-giggs1.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/alex-ferguson.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/old-trafford.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/emirates.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/stamford-bridge.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/anfield.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/cristiano-ronaldo.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/bobby-charlton.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/wayne-rooney.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/george-best.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/newton-heath.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/salford-city.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/fcunited.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/irlam.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/paul-scholes.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/mark-hughes.jpeg';
-var img = new Image();
+var img = Image();
 img.url = '../images/ryan-giggs2.jpeg';
-var img = new Image();
-img.url = '../images/david-beckham.jpeg';
+var img = Image();
+img.url = '../images/david-beckham.jpeg';*/
 
 
 var answerSection = "";
@@ -106,7 +105,10 @@ function generateQuestions() {
 	/*var firstOptions = allQuestions[i].options;
 		$('.options').html(firstOptions);
 		console.log(firstOptions);*/
-
+	var firstOptions = allQuestions[i].options;
+    for (k = 0; k < 4; k++)
+      $('.options'+(k+1)).html(firstOptions[k]);
+    console.log(firstOptions);
 };
 
 //submit answer and show answer modal//
@@ -147,11 +149,10 @@ function nextQuestion() {
 	/*var nextOptions = allQuestions[i].options;
 		$('.option1').html(nextOptions);
 		console.log(nextOptions);*/
-	
-	var nextOptionsList = allQuestions[i].options;
-		$('li').html(nextOptionsList);
-		console.log(nextOptionsList);
-	
+	var nextOptions = allQuestions[i].options;
+    for (k = 0; k < 4; k++)
+      $('.options'+(k+1)).html(nextOptions[k]);
+  	console.log(nextOptions);
 };
 
 //user selects answer//
