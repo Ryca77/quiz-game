@@ -110,22 +110,20 @@ function generateQuestions() {
     console.log(firstOptions);
 };
 
-//select option and check with answer//
+//select option, check answer, return result//
 function checkAnswer() {
 	$('li').click(function() {
 	console.log($(this).text());
 	var userChoice = $(this).text();
 	var currentAnswer = allQuestions[i].answer;
-	var result = "";
 	if (userChoice === currentAnswer) {
 		console.log('correct');
-		result += "Correct!";
+		$('.result').html("Correct!");
 	}
 	else {
 		console.log('incorrect');
-		result += "Incorrect!";
+		$('.result').html("Incorrect!");
 	}
-	return result;
 	});
 };
 checkAnswer();
@@ -153,6 +151,7 @@ function submitAnswer() {
 
 //hide answer modal and show next question//
 $('.next-question').on('click', function() {
+	$('#pic1, #pic2, #pic3, #pic4').css({"webkit-filter" : "opacity(1)"});
 	nextQuestion();
 });
 
@@ -180,26 +179,26 @@ function nextQuestion() {
 };
 
 
-	//each question has 4 pics to choose from - the following will eventually fade out the ones which aren't selected by the user//
-	$('#pic1').click(function() {
-		$('#pic1').css({"webkit-filter" : "opacity(1)"})
-		$('#pic2, #pic3, #pic4').css({"webkit-filter" : "opacity(0.5)"})
-	});
+//each question has 4 pics to choose from - the following will eventually fade out the ones which aren't selected by the user//
+$('#pic1').click(function() {
+	$('#pic1').css({"webkit-filter" : "opacity(1)"})
+	$('#pic2, #pic3, #pic4').css({"webkit-filter" : "opacity(0.5)"})
+});
 
-	$('#pic2').click(function() {
-		$('#pic2').css({"webkit-filter" : "opacity(1)"})
-		$('#pic1, #pic3, #pic4').css({"webkit-filter" : "opacity(0.5)"})
-	});
+$('#pic2').click(function() {
+	$('#pic2').css({"webkit-filter" : "opacity(1)"})
+	$('#pic1, #pic3, #pic4').css({"webkit-filter" : "opacity(0.5)"})
+});
 
-	$('#pic3').click(function() {
-		$('#pic3').css({"webkit-filter" : "opacity(1)"})
-		$('#pic1, #pic2, #pic4').css({"webkit-filter" : "opacity(0.5)"})
-	});
+$('#pic3').click(function() {
+	$('#pic3').css({"webkit-filter" : "opacity(1)"})
+	$('#pic1, #pic2, #pic4').css({"webkit-filter" : "opacity(0.5)"})
+});
 
-	$('#pic4').click(function() {
-		$('#pic4').css({"webkit-filter" : "opacity(1)"})
-		$('#pic1, #pic2, #pic3').css({"webkit-filter" : "opacity(0.5)"})
-	});
+$('#pic4').click(function() {
+	$('#pic4').css({"webkit-filter" : "opacity(1)"})
+	$('#pic1, #pic2, #pic3').css({"webkit-filter" : "opacity(0.5)"})
+});
 
 
 //return result to the user//
