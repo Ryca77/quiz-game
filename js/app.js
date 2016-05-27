@@ -152,7 +152,6 @@ var userChoice = sessionStorage.getItem('livalue');*/
 //submit answer and show answer modal//
 $('.submit').on('click', function() {
 	$('.answer-overlay').fadeIn(1000);
-	$('.start-again').hide();
 	$('.question-container').hide();
 	$('.submit').hide();
 	submitAnswer();
@@ -189,6 +188,7 @@ function nextQuestion() {
 	var nextNumber = allQuestions[i].questionNumber;
 		$('.question-number').html("Question" + " " + nextNumber);
 		console.log(nextNumber);
+	//last question change answer overlay//
 	if(nextNumber >= 5) {
 		console.log('last question');
 			$('.next-question').hide();
@@ -202,10 +202,6 @@ function nextQuestion() {
       $('.options'+(k+1)).html(nextOptions[k]);
   	console.log(nextOptions);
 };
-
-//last question answer overlay//
-/*$('.start-again').click(reload);*/
-
 
 //each question has 4 pics to choose from - the following will eventually fade out the ones which aren't selected by the user//
 $('#pic1').click(function() {
