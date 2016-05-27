@@ -141,7 +141,6 @@ body {
 @media only screen and (max-width: 500px) {
  	#pic1, #pic2, #pic3, #pic4 {
  		height: 25%;
- 		padding-left: 5px;
  	}
  	.header, .caveat {
  		display: none;
