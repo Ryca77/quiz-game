@@ -189,6 +189,11 @@ function nextQuestion() {
 	var nextNumber = allQuestions[i].questionNumber;
 		$('.question-number').html("Question" + " " + nextNumber);
 		console.log(nextNumber);
+	if(nextNumber >= 5) {
+		console.log('last question');
+			$('.next-question').hide();
+			$('.start-again').show();
+	}
 	/*var nextOptions = allQuestions[i].options;
 		$('.option1').html(nextOptions);
 		console.log(nextOptions);*/
@@ -199,7 +204,7 @@ function nextQuestion() {
 };
 
 //last question answer overlay//
-$('.start-again').click(reload);
+/*$('.start-again').click(reload);*/
 
 
 //each question has 4 pics to choose from - the following will eventually fade out the ones which aren't selected by the user//
