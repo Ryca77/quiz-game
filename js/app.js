@@ -123,14 +123,26 @@ function checkAnswer() {
 	else {
 		console.log('incorrect');
 		$('.result').html("Incorrect!");
-	}
+	}	
 	});
 };
 checkAnswer();
 
+/*function keepScore() {
+	var currentScore = 
+	if (checkAnswer = true) {
+		console.log('score');
+		currentScore++
+	}
+	$('.score').html("Score: " + currentScore + " " + "out of 5");
+}
+keepScore();*/
+
 //didn't work but keeping for reference//
 /*sessionStorage.setItem('livalue', $(this).text());
 var userChoice = sessionStorage.getItem('livalue');*/
+
+//keep score//
 
 //submit answer and show answer modal//
 $('.submit').on('click', function() {
@@ -156,7 +168,7 @@ $('.next-question').on('click', function() {
 });
 
 function nextQuestion() {
-	$('.answer-overlay').fadeOut(1000);
+	$('.answer-overlay').fadeOut(500);
 	if(i>allQuestions.length -1) {
 		i=0
 	}
@@ -177,7 +189,6 @@ function nextQuestion() {
       $('.options'+(k+1)).html(nextOptions[k]);
   	console.log(nextOptions);
 };
-
 
 //each question has 4 pics to choose from - the following will eventually fade out the ones which aren't selected by the user//
 $('#pic1').click(function() {
@@ -200,34 +211,7 @@ $('#pic4').click(function() {
 	$('#pic1, #pic2, #pic3').css({"webkit-filter" : "opacity(0.5)"})
 });
 
-
-//return result to the user//
-/*$('.answer').html(checkAnswer(userChoice,answer));
-	var result = checkAnswer + " " + "The answer is" + " " + answer;
-
-};*/
-
-//these are the beginnings of the triggers that show answer and next question//
-/*var currentQuestion = allQuestions[currentQuestion];
-$('.question-container').on('click', '.submit', function () {
-	$('.answer-overlay').fadeIn(1000);
-	result;
-	info;
-	updateScore();
 });
-
-var currentGame = allQuestions[currentQuestion];
-$('.answer-overlay').on('click', '.next-question', function() {
-	$('.answer-overlay').fadeOut(1000);
-	currentQuestion++;
-	nextQuestion();
-});*/
-
-
-/*$('.question-number').html([questionNumber]);
-		var result = "Question" + " " + questionNumber;
-	$('.question').html("question");
-	$('.answers-container').html("options");*/
 
 //Display Answer Modal//
 /*$('.submit').click(function() {
@@ -238,5 +222,3 @@ $('.answer-overlay').on('click', '.next-question', function() {
 /*$('.next-question').click(function() {
 	$('.answer-overlay').fadeOut(1000);
 });*/
-
-});
