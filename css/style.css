@@ -191,7 +191,11 @@ body {
 	border-radius: 5px;
 }
 
-.next-question, .start-again:hover {
+.next-question:hover {
+	background-color: #DA020E;
+}
+
+.start-again:hover {
 	background-color: #DA020E;
 }
 

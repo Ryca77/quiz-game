@@ -152,6 +152,7 @@ var userChoice = sessionStorage.getItem('livalue');*/
 //submit answer and show answer modal//
 $('.submit').on('click', function() {
 	$('.answer-overlay').fadeIn(1000);
+	$('.start-again').hide();
 	$('.question-container').hide();
 	$('.submit').hide();
 	submitAnswer();
