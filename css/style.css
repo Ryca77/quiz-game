@@ -52,7 +52,7 @@ body {
 	font-family: 'Aldrich', sans-serif;
 	font-size: 150px;
 	text-align: center;
-	padding-top: 200px;
+	padding-top: 183px;
 	padding-bottom: 350px;
 }
 
@@ -65,7 +65,7 @@ body {
 }
 
 .question-number, .question {
-	width: 80%;
+	width: 85%;
 	margin: 0 auto;
 	margin-top: 15px;
 	border: 1px solid none;
@@ -122,8 +122,8 @@ body {
 .submit {
 	display: block;
 	margin: 0 auto;
-	margin-bottom: 20px;
-	margin-top: -50px;
+	margin-bottom: 14px;
+	margin-top: -60px;
 	padding-top: 10px;
 	text-align: center;
 	border: none;
@@ -178,7 +178,7 @@ body {
 	line-height: 25px;
 }
 
-.next-question {
+.next-question, .start-again {
 	display: block;
 	margin: 0 auto;
 	padding-top: 10px;
@@ -191,7 +191,7 @@ body {
 	border-radius: 5px;
 }
 
-.next-question:hover {
+.next-question, .start-again:hover {
 	background-color: #DA020E;
 }
 

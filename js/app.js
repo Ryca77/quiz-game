@@ -18,14 +18,14 @@ var allQuestions = [ {
 	}, 
 			 {
 	questionNumber: 3,
-	question: 'Who is the all time top goal scorer at Machester United?',
+	question: 'Who is the all time top goal scorer at Manchester United?',
 	options: ['Cristiano Ronaldo', 'Sir Bobby Charlton', 'Wayne Rooney', 'George Best'],
 	answer: 'Sir Bobby Charlton',
 	info: 'Sir Bobby Charlton has held the top goalscorer record since 1973. He scored a total of 249 goals over a 17 year period. Wayne Rooney is currently on 245 goals and is likely to surpass Sir Bobby during the 2016/17 season.'
 	},
 			 {
 	questionNumber: 4,
-	question: 'What was the original name of Manchester United when it was first formed in 1878?',
+	question: 'What was the original name of Manchester United?',
 	options: ['Newton Heath LYR F.C.', 'Salford City', 'FC United of Manchester', 'Irlam F.C.'],
 	answer: 'Newton Heath LYR F.C.',
 	info: 'Newton Heath LYR Football Club was formed in 1878 by the Carriage and Wagon department of the Lancashire and Yorkshire Railway depot at Newton Heath. The club was rescued from financial problems in 1902 by four local businessmen, and the club renamed Manchester United Football Club by the new owners.'
@@ -34,7 +34,7 @@ var allQuestions = [ {
 	questionNumber: 5,
 	question: 'Who has made the most appearances for Manchester United?',
 	options: ['Paul Scholes', 'Mark Hughes', 'Ryan Giggs', 'David Beckham'],
-	answer: 'Ryan Giigs',
+	answer: 'Ryan Giggs',
 	info: 'Ryan Giggs made 963 appearances for Manchester United over a 23 year career at the club. This is over 200 more than any other player and it is thought that this record will never be beaten.'
 	},
 ];
@@ -94,7 +94,7 @@ $('#go').on('click', function() {
 
 function generateQuestions() {
 	$('.question-container').fadeIn(1000);
-	$('.submit').fadeIn(1000);
+	/*$('.submit').fadeIn(1000);*/
 	var firstQuestion = allQuestions[i].question;
 		$('.question').html(firstQuestion);
 		console.log(firstQuestion);
@@ -114,6 +114,7 @@ function generateQuestions() {
 function checkAnswer() {
 	$('li').click(function() {
 	console.log($(this).text());
+	$('.submit').fadeIn(1000);
 	var userChoice = $(this).text();
 	var currentAnswer = allQuestions[i].answer;
 	if (userChoice === currentAnswer) {
@@ -128,25 +129,31 @@ function checkAnswer() {
 };
 checkAnswer();
 
-/*function keepScore() {
-	var currentScore = 
-	if (checkAnswer = true) {
+//keep score//
+function keepScore() {
+	var currentScore = 0;
+	$('li').click(function() {
+	console.log($(this).text());
+	var userChoice = $(this).text();
+	var currentAnswer = allQuestions[i].answer;
+	if (userChoice === currentAnswer) {
 		console.log('score');
 		currentScore++
 	}
 	$('.score').html("Score: " + currentScore + " " + "out of 5");
+	});
 }
-keepScore();*/
+keepScore();
 
 //didn't work but keeping for reference//
 /*sessionStorage.setItem('livalue', $(this).text());
 var userChoice = sessionStorage.getItem('livalue');*/
 
-//keep score//
-
 //submit answer and show answer modal//
 $('.submit').on('click', function() {
-	$('.answer-overlay').show();
+	$('.answer-overlay').fadeIn(1000);
+	$('.question-container').hide();
+	$('.submit').hide();
 	submitAnswer();
 	sessionStorage.clear();
 });
@@ -168,7 +175,7 @@ $('.next-question').on('click', function() {
 });
 
 function nextQuestion() {
-	$('.answer-overlay').fadeOut(500);
+	$('.answer-overlay').hide();
 	if(i>allQuestions.length -1) {
 		i=0
 	}
@@ -189,6 +196,10 @@ function nextQuestion() {
       $('.options'+(k+1)).html(nextOptions[k]);
   	console.log(nextOptions);
 };
+
+//last question answer overlay//
+$('.start-again').click(reload);
+
 
 //each question has 4 pics to choose from - the following will eventually fade out the ones which aren't selected by the user//
 $('#pic1').click(function() {
