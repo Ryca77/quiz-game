@@ -6,102 +6,43 @@ var allQuestions = [ {
 	questionNumber: 1,
 	question: 'Who is the most successful manager of Manchester United?',
 	options: ['Sir Matt Busby', 'Louis Van Gaal', 'Ryan Giggs', 'Sir Alex Ferguson'],
-	optionPics: ['../images/matt-busby.jpeg', '../images/louis-van-gaal.jpeg', '../images/ryan-giggs1.jpeg', '../images/alex-ferguson.jpeg'],
+	optionPics: ['./images/matt-busby.jpeg', './images/louis-van-gaal.jpeg', './images/ryan-giggs1.jpeg', './images/alex-ferguson.jpeg'],
 	answer: 'Sir Alex Ferguson',
 	info: 'Sir Alex Ferguson was the manager of Manchester United for 26 years between 1986 and 2013. During that time he amassed 38 trophies including 13 Premier League titles, five FA Cups and two UEFA Champions League titles. His win rate was nearly 60 per cent, the highest of any manager in the history of the club.'
 	},
 			 {
 	questionNumber: 2,
 	question: 'Where do Manchester United play their home games?',		 	
-	options: [
-	['Old Trafford', '../images/old-trafford.jpeg'],
-	['Emirates', '../images/emirates.jpeg'],
-	['Stamford Bridge', '../images/stamford-bridge.jpeg'],
-	['Anfield', '../images/anfield.jpeg']
-	],
+	options: ['Old Trafford', 'Emirates','Stamford Bridge', 'Anfield'],
+	optionPics: ['./images/old-trafford.jpeg', './images/emirates.jpeg', './images/stamford-bridge.jpeg', './images/anfield.jpeg'],
 	answer: 'Old Trafford',
 	info: 'Manchester United moved to Old Trafford in 1910 and have played there ever since (although from 1941 to 1949 the club shared with local rivals Manchester City as a result of Second World War bomb damage) With a capacity of 75,635 it is the largest club stadium of any club in the UK.'
 	}, 
 			 {
 	questionNumber: 3,
 	question: 'Who is the all time top goal scorer at Manchester United?',
-	options: [
-	['Cristiano Ronaldo', '../images/cristiano-ronaldo.jpeg'],
-	['Sir Bobby Charlton', '../images/bobby-charlton.jpeg'],
-	['Wayne Rooney', '../images/wayne-rooney.jpeg'],
-	['George Best', '../images/george-best.jpeg']
-	],
+	options: ['Cristiano Ronaldo', 'Sir Bobby Charlton', 'Wayne Rooney', 'George Best'],
+	optionPics: ['./images/cristiano-ronaldo.jpeg', './images/bobby-charlton.jpeg', './images/wayne-rooney.jpeg', './images/george-best.jpeg'],
 	answer: 'Sir Bobby Charlton',
 	info: 'Sir Bobby Charlton has held the top goalscorer record since 1973. He scored a total of 249 goals over a 17 year period. Wayne Rooney is currently on 245 goals and is likely to surpass Sir Bobby during the 2016/17 season.'
 	},
 			 {
 	questionNumber: 4,
 	question: 'What was the original name of Manchester United?',
-	options: [
-	['Newton Heath LYR F.C.', '../images/newton-heath.jpeg'],
-	['Salford City', '../images/salford-city.jpeg'],
-	['FC United of Manchester', '../images/fcunited.jpeg'],
-	['Irlam F.C.', '../images/irlam.jpeg']
-	],
+	options: ['Newton Heath LYR F.C.', 'Salford City', 'FC United of Manchester', 'Irlam F.C.'],
+	optionPics: ['./images/newton-heath.jpeg', './images/salford-city.jpeg', './images/fcunited.jpeg','./images/irlam.jpeg'],
 	answer: 'Newton Heath LYR F.C.',
 	info: 'Newton Heath LYR Football Club was formed in 1878 by the Carriage and Wagon department of the Lancashire and Yorkshire Railway depot at Newton Heath. The club was rescued from financial problems in 1902 by four local businessmen, and the club renamed Manchester United Football Club by the new owners.'
 	},
 			 {
 	questionNumber: 5,
 	question: 'Who has made the most appearances for Manchester United?',
-	options: [
-	['Paul Scholes', '../images/paul-scholes.jpeg'],
-	['Mark Hughes', '../images/mark-hughes.jpeg'],
-	['Ryan Giggs', '../images/ryan-giggs2.jpeg'],
-	['David Beckham', '../images/david-beckham.jpeg']
-	],
+	options: ['Paul Scholes', 'Mark Hughes', 'Ryan Giggs', 'David Beckham'],
+	optionPics: ['./images/paul-scholes.jpeg', './images/mark-hughes.jpeg', './images/ryan-giggs2.jpeg', './images/david-beckham.jpeg'],
 	answer: 'Ryan Giggs',
 	info: 'Ryan Giggs made 963 appearances for Manchester United over a 23 year career at the club. This is over 200 more than any other player and it is thought that this record will never be beaten.'
 	},
 ];
-
-//image variables//
-/*var img = Image();
-img.url = '../images/matt-busby.jpeg';
-var img = Image();
-img.url = '../images/louis-van-gaal.jpeg';
-var img = Image();
-img.url = '../images/ryan-giggs1.jpeg';
-var img = Image();
-img.url = '../images/alex-ferguson.jpeg';
-var img = Image();
-img.url = '../images/old-trafford.jpeg';
-var img = Image();
-img.url = '../images/emirates.jpeg';
-var img = Image();
-img.url = '../images/stamford-bridge.jpeg';
-var img = Image();
-img.url = '../images/anfield.jpeg';
-var img = Image();
-img.url = '../images/cristiano-ronaldo.jpeg';
-var img = Image();
-img.url = '../images/bobby-charlton.jpeg';
-var img = Image();
-img.url = '../images/wayne-rooney.jpeg';
-var img = Image();
-img.url = '../images/george-best.jpeg';
-var img = Image();
-img.url = '../images/newton-heath.jpeg';
-var img = Image();
-img.url = '../images/salford-city.jpeg';
-var img = Image();
-img.url = '../images/fcunited.jpeg';
-var img = Image();
-img.url = '../images/irlam.jpeg';
-var img = Image();
-img.url = '../images/paul-scholes.jpeg';
-var img = Image();
-img.url = '../images/mark-hughes.jpeg';
-var img = Image();
-img.url = '../images/ryan-giggs2.jpeg';
-var img = Image();
-img.url = '../images/david-beckham.jpeg';*/
-
 
 var answerSection = "";
 $('.question-container').hide();
@@ -121,13 +62,14 @@ function generateQuestions() {
 		console.log(firstQuestion);
 	var firstNumber = allQuestions[i].questionNumber;
 		$('.question-number').html("Question" + " " + firstNumber);
-		console.log(firstNumber);
+		console.log(firstNumber);mage:
 	/*var firstOptions = allQuestions[i].options;
 		$('.options').html(firstOptions);
 		console.log(firstOptions);*/
 	var firstOptions = allQuestions[i].options;
+	var firstImages = allQuestions[i].optionPics;
     for (k = 0; k < 4; k++)
-      	$('.options'+(k+1)).html(firstOptions[k]);
+      	$('.options'+(k+1)).html(firstOptions[k]).css('background-image', 'url(' + firstImages[k] + ')');
     console.log(firstOptions);
 };
 
@@ -191,7 +133,7 @@ function submitAnswer() {
 
 //hide answer modal and show next question//
 $('.next-question').on('click', function() {
-	$('#pic1, #pic2, #pic3, #pic4').css({"webkit-filter" : "opacity(1)"});
+	$('#pic1, #pic2, #pic3, #pic4').css({"webkit-filter" : "opacity(1)", "moz-box-shadow" : "inset 0 0 0px #DA020E", "webkit-box-shadow" : "inset 0 0 0px #DA020E", "box-shadow" : "inset 0 0 0px #DA020E"});
 	nextQuestion();
 });
 
@@ -220,30 +162,31 @@ function nextQuestion() {
 		$('.option1').html(nextOptions);
 		console.log(nextOptions);*/
 	var nextOptions = allQuestions[i].options;
+    var nextImages = allQuestions[i].optionPics;
     for (k = 0; k < 4; k++)
-      $('.options'+(k+1)).html(nextOptions[k]);
+      $('.options'+(k+1)).html(nextOptions[k]).css('background-image', 'url(' + nextImages[k] + ')');
   	console.log(nextOptions);
 };
 
 //each question has 4 pics to choose from - fading out the ones which aren't selected by the user//
 $('#pic1').click(function() {
-	$('#pic1').css({"webkit-filter" : "opacity(1)"})
-	$('#pic2, #pic3, #pic4').css({"webkit-filter" : "opacity(0.5)"})
+	$('#pic1').css({"webkit-filter" : "opacity(1)", "moz-box-shadow" : "inset 0 0 30px #DA020E", "webkit-box-shadow" : "inset 0 0 30px #DA020E", "box-shadow" : "inset 0 0 20px #DA020E"})
+	$('#pic2, #pic3, #pic4').css({"webkit-filter" : "opacity(0.5)", "moz-box-shadow" : "inset 0 0 0px #DA020E", "webkit-box-shadow" : "inset 0 0 0px #DA020E", "box-shadow" : "inset 0 0 0px #DA020E"})
 });
 
 $('#pic2').click(function() {
-	$('#pic2').css({"webkit-filter" : "opacity(1)"})
-	$('#pic1, #pic3, #pic4').css({"webkit-filter" : "opacity(0.5)"})
+	$('#pic2').css({"webkit-filter" : "opacity(1)", "moz-box-shadow" : "inset 0 0 30px #DA020E", "webkit-box-shadow" : "inset 0 0 30px #DA020E", "box-shadow" : "inset 0 0 20px #DA020E"})
+	$('#pic1, #pic3, #pic4').css({"webkit-filter" : "opacity(0.5)", "moz-box-shadow" : "inset 0 0 0px #DA020E", "webkit-box-shadow" : "inset 0 0 0px #DA020E", "box-shadow" : "inset 0 0 0px #DA020E"})
 });
 
 $('#pic3').click(function() {
-	$('#pic3').css({"webkit-filter" : "opacity(1)"})
-	$('#pic1, #pic2, #pic4').css({"webkit-filter" : "opacity(0.5)"})
+	$('#pic3').css({"webkit-filter" : "opacity(1)", "moz-box-shadow" : "inset 0 0 30px #DA020E", "webkit-box-shadow" : "inset 0 0 30px #DA020E", "box-shadow" : "inset 0 0 20px #DA020E"})
+	$('#pic1, #pic2, #pic4').css({"webkit-filter" : "opacity(0.5)", "moz-box-shadow" : "inset 0 0 0px #DA020E", "webkit-box-shadow" : "inset 0 0 0px #DA020E", "box-shadow" : "inset 0 0 0px #DA020E"})
 });
 
 $('#pic4').click(function() {
-	$('#pic4').css({"webkit-filter" : "opacity(1)"})
-	$('#pic1, #pic2, #pic3').css({"webkit-filter" : "opacity(0.5)"})
+	$('#pic4').css({"webkit-filter" : "opacity(1)", "moz-box-shadow" : "inset 0 0 30px #DA020E", "webkit-box-shadow" : "inset 0 0 30px #DA020E", "box-shadow" : "inset 0 0 20px #DA020E"})
+	$('#pic1, #pic2, #pic3').css({"webkit-filter" : "opacity(0.5)", "moz-box-shadow" : "inset 0 0 0px #DA020E", "webkit-box-shadow" : "inset 0 0 0px #DA020E", "box-shadow" : "inset 0 0 0px #DA020E"})
 });
 
 });

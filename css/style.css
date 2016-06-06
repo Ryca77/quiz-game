@@ -93,30 +93,15 @@ body {
 	padding-left: 10px;
 	font-size: 20px;
 	color: white;
-}
-
-#go, #pic1, #pic2, #pic3, #pic4:hover {
-	cursor: pointer;
+	text-shadow: #DA020E 0 0 5px;
 }
 
 #pic2, #pic4 {
 	margin-top: 5px;
 }
 
-#pic1 {
-	background-image: url(../images/matt-busby.jpeg);
-}
-
-#pic2 {
-	background-image: url(../images/louis-van-gaal.jpeg);
-}
-
-#pic3 {
-	background-image: url(../images/ryan-giggs1.jpeg);
-}
-
-#pic4 {
-	background-image: url(../images/alex-ferguson.jpeg);
+#go, #pic1, #pic2, #pic3, #pic4:hover {
+	cursor: pointer;
 }
 
 .submit {
