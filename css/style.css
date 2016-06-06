@@ -178,7 +178,7 @@ body {
 	line-height: 25px;
 }
 
-.next-question, .start-again {
+.next-question {
 	display: block;
 	margin: 0 auto;
 	padding-top: 10px;
@@ -193,6 +193,15 @@ body {
 
 .start-again {
 	display: none;
+	margin: 0 auto;
+	padding-top: 10px;
+	text-align: center;
+	border: none;
+	font-family: 'Aldrich', sans-serif;
+	font-size: 30px;
+	background-color: #FFFFFF;
+	border: 2px solid black;
+	border-radius: 5px;
 }
 
 .next-question:hover {
