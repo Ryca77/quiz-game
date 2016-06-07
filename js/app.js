@@ -87,7 +87,7 @@ function checkAnswer() {
 	else {
 		console.log('incorrect');
 		$('.result').html("Incorrect!");
-	}	
+	}
 	});
 };
 checkAnswer();
