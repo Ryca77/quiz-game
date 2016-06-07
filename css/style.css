@@ -123,9 +123,10 @@ body {
 	background-color: #DA020E;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 750px) {
  	#pic1, #pic2, #pic3, #pic4 {
- 		height: 25%;
+ 		height: 35%;
+ 		font-size: 15px;
  	}
  	.header, .caveat {
  		display: none;
