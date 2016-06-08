@@ -124,16 +124,26 @@ body {
 }
 
 @media only screen and (max-width: 750px) {
- 	#pic1, #pic2, #pic3, #pic4 {
- 		height: 35%;
- 		font-size: 15px;
- 	}
  	.header, .caveat {
  		display: none;
  	}
  	.header-small, .caveat-small {
  		display: inline;
  	}
+ 	.question-container {
+ 		height: 800px;
+ 	}
+ 	.answers-container {
+ 		columns: 1;
+ 		height: 650px;
+ 	}
+ 	#pic1, #pic2, #pic3, #pic4 {
+ 		height: 22%;
+ 		font-size: 15px;
+ 	}
+ 	#pic2, #pic3, #pic4 {
+	margin-top: 5px;
+	}
 }
 
 /*Hidden Answer Page Style*/

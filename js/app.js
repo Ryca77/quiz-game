@@ -62,7 +62,7 @@ function generateQuestions() {
 		console.log(firstQuestion);
 	var firstNumber = allQuestions[i].questionNumber;
 		$('.question-number').html("Question" + " " + firstNumber);
-		console.log(firstNumber);mage:
+		console.log(firstNumber);
 	/*var firstOptions = allQuestions[i].options;
 		$('.options').html(firstOptions);
 		console.log(firstOptions);*/
