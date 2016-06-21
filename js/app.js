@@ -114,6 +114,7 @@ var userChoice = sessionStorage.getItem('livalue');*/
 
 //submit answer and show answer modal//
 $('.submit').on('click', function() {
+	$(window).scrollTop(0);
 	$('.answer-overlay').fadeIn(1000);
 	$('.question-container').hide();
 	$('.submit').hide();
@@ -133,6 +134,7 @@ function submitAnswer() {
 
 //hide answer modal and show next question//
 $('.next-question').on('click', function() {
+	$(window).scrollTop(0);
 	$('#pic1, #pic2, #pic3, #pic4').css({"webkit-filter" : "opacity(1)", "moz-box-shadow" : "inset 0 0 0px #DA020E", "webkit-box-shadow" : "inset 0 0 0px #DA020E", "box-shadow" : "inset 0 0 0px #DA020E"});
 	nextQuestion();
 });
