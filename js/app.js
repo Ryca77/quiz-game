@@ -56,28 +56,24 @@ $('#go').on('click', function() {
 
 function generateQuestions() {
 	$('.question-container').fadeIn(1000);
-	/*$('.submit').fadeIn(1000);*/
 	var firstQuestion = allQuestions[i].question;
 		$('.question').html(firstQuestion);
 		console.log(firstQuestion);
 	var firstNumber = allQuestions[i].questionNumber;
 		$('.question-number').html("Question" + " " + firstNumber);
 		console.log(firstNumber);
-	/*var firstOptions = allQuestions[i].options;
-		$('.options').html(firstOptions);
-		console.log(firstOptions);*/
 	var firstOptions = allQuestions[i].options;
 	var firstImages = allQuestions[i].optionPics;
     for (k = 0; k < 4; k++)
       	$('.options'+(k+1)).html(firstOptions[k]).css('background-image', 'url(' + firstImages[k] + ')');
-    console.log(firstOptions);
+    	console.log(firstOptions);
 };
 
 //select option, check answer, return result//
 function checkAnswer() {
 	$('li').click(function() {
-	console.log($(this).text());
-	$('.submit').fadeIn(1000);
+		console.log($(this).text());
+		$('.submit').fadeIn(1000);
 	var userChoice = $(this).text();
 	var currentAnswer = allQuestions[i].answer;
 	if (userChoice === currentAnswer) {
@@ -96,7 +92,7 @@ checkAnswer();
 function keepScore() {
 	var currentScore = 0;
 	$('li').click(function() {
-	console.log($(this).text());
+		console.log($(this).text());
 	var userChoice = $(this).text();
 	var currentAnswer = allQuestions[i].answer;
 	if (userChoice === currentAnswer) {
@@ -107,10 +103,6 @@ function keepScore() {
 	});
 }
 keepScore();
-
-//didn't work but keeping for reference//
-/*sessionStorage.setItem('livalue', $(this).text());
-var userChoice = sessionStorage.getItem('livalue');*/
 
 //submit answer and show answer modal//
 $('.submit').on('click', function() {
@@ -153,6 +145,7 @@ function nextQuestion() {
 	var nextNumber = allQuestions[i].questionNumber;
 		$('.question-number').html("Question" + " " + nextNumber);
 		console.log(nextNumber);
+
 	//last question change answer overlay//
 	if(nextNumber >= 5) {
 		console.log('last question');
@@ -160,17 +153,15 @@ function nextQuestion() {
 			$('.start-again').show();
 			$('.start-again').css('display', 'block');
 	}
-	/*var nextOptions = allQuestions[i].options;
-		$('.option1').html(nextOptions);
-		console.log(nextOptions);*/
+	
 	var nextOptions = allQuestions[i].options;
     var nextImages = allQuestions[i].optionPics;
     for (k = 0; k < 4; k++)
-      $('.options'+(k+1)).html(nextOptions[k]).css('background-image', 'url(' + nextImages[k] + ')');
-  	console.log(nextOptions);
+		$('.options'+(k+1)).html(nextOptions[k]).css('background-image', 'url(' + nextImages[k] + ')');
+  		console.log(nextOptions);
 };
 
-//each question has 4 pics to choose from - fading out the ones which aren't selected by the user//
+//each question has 4 pics to choose from - fade out the ones which aren't selected by the user and highlight selected//
 $('#pic1').click(function() {
 	$('#pic1').css({"webkit-filter" : "opacity(1)", "moz-box-shadow" : "inset 0 0 30px #DA020E", "webkit-box-shadow" : "inset 0 0 30px #DA020E", "box-shadow" : "inset 0 0 20px #DA020E"})
 	$('#pic2, #pic3, #pic4').css({"webkit-filter" : "opacity(0.5)", "moz-box-shadow" : "inset 0 0 0px #DA020E", "webkit-box-shadow" : "inset 0 0 0px #DA020E", "box-shadow" : "inset 0 0 0px #DA020E"})
@@ -192,13 +183,3 @@ $('#pic4').click(function() {
 });
 
 });
-
-//Display Answer Modal//
-/*$('.submit').click(function() {
-	$('.answer-overlay').show();
-});*/
-
-//Hide Answer Model//
-/*$('.next-question').click(function() {
-	$('.answer-overlay').fadeOut(1000);
-});*/
